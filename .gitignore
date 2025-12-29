@@ -1,0 +1,12 @@
+node_modules
+.astro
+dist
+.DS_Store
+coverage
+/.env*
+/.vercel
+/.netlify
+/.next
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*

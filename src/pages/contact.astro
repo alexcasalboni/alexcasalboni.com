@@ -1,0 +1,71 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NavBar from '@components/NavBar.astro';
+import SectionHeader from '@components/SectionHeader.astro';
+import SocialLinks from '@components/SocialLinks.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<BaseLayout title="Contact | Alex Casalboni">
+  <NavBar />
+  <main>
+    <div class="content-shell">
+      <SectionHeader
+        title="Let’s work together"
+        subtitle="Speaking engagements, content partnerships, advisory sessions, and community collaborations."
+      />
+      <section class="grid contact">
+        <div class="card glass">
+          <h3>Book Alex</h3>
+          <p>
+            Planning a conference keynote, customer story, or product launch? I help craft messages,
+            build demos, and deliver stories that resonate with developers and decision makers.
+          </p>
+          <a class="btn" href="mailto:alex@alexcasalboni.com?subject=Collaboration with Alex">
+            Email me
+          </a>
+        </div>
+        <div class="card glass">
+          <h3>Stay connected</h3>
+          <p>Follow along for new talks, blog posts, and community events.</p>
+          <SocialLinks />
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .contact {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+
+  h3 {
+    margin: 0 0 0.3rem;
+  }
+
+  p {
+    margin: 0 0 0.9rem;
+    color: var(--muted);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.65rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, #7ad7f0, #c792ea);
+    color: #0b0f17;
+    font-weight: 700;
+    box-shadow: var(--glow);
+  }
+</style>

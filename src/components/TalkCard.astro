@@ -1,0 +1,69 @@
+---
+interface Props {
+  title: string;
+  event: string;
+  videoId: string;
+  theme: string;
+}
+
+const { title, event, videoId, theme } = Astro.props;
+---
+
+<article class="talk glass">
+  <div class="info">
+    <span class="tag">{event}</span>
+    <h3>{title}</h3>
+    <p>{theme}</p>
+  </div>
+  <div class="video">
+    <iframe
+      src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+      title={title}
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    />
+  </div>
+</article>
+
+<style>
+  .talk {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    padding: 1rem 1rem 0;
+  }
+
+  h3 {
+    margin: 0.2rem 0 0.2rem;
+  }
+
+  p {
+    margin: 0 0 1rem;
+    color: var(--muted);
+  }
+
+  .video iframe {
+    width: 100%;
+    min-height: 240px;
+    border: none;
+    display: block;
+  }
+
+  @media (min-width: 720px) {
+    .talk {
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: stretch;
+    }
+
+    .video iframe {
+      height: 100%;
+      min-height: 280px;
+    }
+  }
+</style>

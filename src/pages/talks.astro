@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NavBar from '@components/NavBar.astro';
+import SectionHeader from '@components/SectionHeader.astro';
+import TalkCard from '@components/TalkCard.astro';
+import Footer from '@components/Footer.astro';
+import { talks } from '@data/content';
+---
+
+<BaseLayout title="Talks | Alex Casalboni">
+  <NavBar />
+  <main>
+    <div class="content-shell">
+      <SectionHeader
+        title="Talks & Workshops"
+        subtitle="Conference keynotes, live demos, and workshops recorded with communities around the world."
+      />
+      <div class="stack">
+        {talks.map((talk) => (
+          <TalkCard {...talk} />
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .stack {
+    display: grid;
+    gap: 1.1rem;
+  }
+</style>

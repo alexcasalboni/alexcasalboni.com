@@ -1,0 +1,42 @@
+---
+import SocialLinks from './SocialLinks.astro';
+---
+
+<footer class="footer">
+  <div class="content-shell inner">
+    <div>
+      <div class="title">Alex Casalboni</div>
+      <p>Developer Advocate building delightful experiences for developers worldwide.</p>
+      <p class="muted">Available for speaking, collaborations, and advisory work.</p>
+    </div>
+    <SocialLinks />
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 1.5rem 3rem;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0.2rem 0;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+</style>

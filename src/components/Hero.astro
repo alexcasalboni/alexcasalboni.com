@@ -1,0 +1,145 @@
+---
+import { callsToAction } from '@data/content';
+---
+
+<section class="hero glass">
+  <div class="copy">
+    <p class="eyebrow">Developer Advocate · Serverless · AI-curious</p>
+    <h1>Crafting stories that turn builders into champions.</h1>
+    <p class="lede">
+      I design talks, code demos, and content strategies that help developers ship confidently—
+      from early prototypes to enterprise-scale launches.
+    </p>
+    <div class="actions">
+      {callsToAction.map((cta) => (
+        <a class={`btn ${cta.style}`} href={cta.href}>{cta.label}</a>
+      ))}
+    </div>
+    <div class="footnote">
+      Trusted by global communities, AWS user groups, and thousands of engineers tuning into livestreams and conference talks.
+    </div>
+  </div>
+  <div class="panel">
+    <div class="badge">10+ years speaking</div>
+    <div class="badge">Global stage experience</div>
+    <div class="card">
+      <div class="title">What I do</div>
+      <ul>
+        <li>Keynotes, hands-on workshops, and masterclasses</li>
+        <li>Content programs across blog, newsletter, and video</li>
+        <li>Product storytelling, messaging, and launches</li>
+        <li>Community strategy and developer onboarding</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: grid;
+    gap: 1.75rem;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 0 0 0.5rem;
+  }
+
+  h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.1rem, 3vw + 1rem, 3.2rem);
+  }
+
+  .lede {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin: 0 0 1rem;
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.1rem;
+    border-radius: 14px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .btn.solid {
+    background: linear-gradient(135deg, #7ad7f0, #c792ea);
+    color: #0b0f17;
+    box-shadow: var(--glow);
+    border-color: transparent;
+  }
+
+  .btn.ghost {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .footnote {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .panel {
+    display: grid;
+    gap: 0.8rem;
+    align-content: start;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    width: fit-content;
+    color: var(--muted);
+  }
+
+  .card {
+    padding: 1rem;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .card .title {
+    color: var(--text);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .card ul {
+    padding-left: 1.1rem;
+    margin: 0;
+    color: var(--muted);
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  @media (min-width: 840px) {
+    .hero {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+    }
+  }
+</style>

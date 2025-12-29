@@ -1,0 +1,32 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NavBar from '@components/NavBar.astro';
+import SectionHeader from '@components/SectionHeader.astro';
+import ArticleCard from '@components/ArticleCard.astro';
+import Footer from '@components/Footer.astro';
+import { writing } from '@data/content';
+---
+
+<BaseLayout title="Writing | Alex Casalboni">
+  <NavBar />
+  <main>
+    <div class="content-shell">
+      <SectionHeader
+        title="Writing & resources"
+        subtitle="Curated essays and guides that help teams adopt cloud-native, serverless-first patterns."
+      />
+      <div class="grid articles">
+        {writing.map((article) => (
+          <ArticleCard {...article} />
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .articles {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+</style>

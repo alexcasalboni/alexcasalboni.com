@@ -1,0 +1,109 @@
+---
+---
+
+<header class="nav-shell">
+  <div class="brand">
+    <div class="avatar">
+      <img src="/avatar.svg" alt="Alex Casalboni placeholder portrait" loading="lazy" />
+    </div>
+    <div>
+      <strong>Alex Casalboni</strong>
+      <div class="subtitle">Developer Advocate · Speaker · Creator</div>
+    </div>
+  </div>
+
+  <nav class="links">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/writing">Writing</a>
+    <a class="nav-link" href="/talks">Talks</a>
+    <a class="nav-link" href="/contact">Contact</a>
+    <a class="cta" href="https://alexcasalboni.substack.com">Substack</a>
+  </nav>
+</header>
+
+<style>
+  .nav-shell {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    backdrop-filter: blur(10px);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(122, 215, 240, 0.4), rgba(199, 146, 234, 0.4));
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    color: var(--muted);
+    padding: 0.35rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+  }
+
+  .nav-link:hover {
+    color: var(--text);
+    border-color: var(--border);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .cta {
+    padding: 0.45rem 0.9rem;
+    border-radius: 12px;
+    color: #0b0f17;
+    background: linear-gradient(135deg, #7ad7f0, #c792ea);
+    font-weight: 600;
+    box-shadow: 0 0 16px rgba(122, 215, 240, 0.35);
+  }
+
+  .cta:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 720px) {
+    .nav-shell {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .links {
+      width: 100%;
+    }
+  }
+</style>
