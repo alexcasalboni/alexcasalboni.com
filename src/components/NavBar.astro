@@ -1,4 +1,5 @@
 ---
+import { SUBSTACK_URL } from '@data/content';
 ---
 
 <header class="nav-shell">
@@ -8,7 +9,7 @@
     </div>
     <div>
       <strong>Alex Casalboni</strong>
-      <div class="subtitle">Developer Advocate · Speaker · Creator</div>
+      <div class="subtitle">Passionate about sharing & helping others succeed</div>
     </div>
   </div>
 
@@ -17,7 +18,7 @@
     <a class="nav-link" href="/writing">Writing</a>
     <a class="nav-link" href="/talks">Talks</a>
     <a class="nav-link" href="/contact">Contact</a>
-    <a class="cta" href="https://alexcasalboni.substack.com">Substack</a>
+    <a class="cta" href={SUBSTACK_URL} rel="noopener">Substack</a>
   </nav>
 </header>
 

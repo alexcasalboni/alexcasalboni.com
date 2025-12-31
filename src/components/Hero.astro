@@ -4,24 +4,24 @@ import { callsToAction } from '@data/content';
 
 <section class="hero glass">
   <div class="copy">
-    <p class="eyebrow">Developer Advocate · Serverless · AI-curious</p>
+    <p class="eyebrow">Software Engineer · Developer Advocate · Storyteller</p>
     <h1>Crafting stories that turn builders into champions.</h1>
     <p class="lede">
-      I design talks, code demos, and content strategies that help developers ship confidently—
-      from early prototypes to enterprise-scale launches.
+      I design talks, code demos, and content strategies that help developers ship confidently.
+      From early prototypes to enterprise-scale launches.
     </p>
     <div class="actions">
       {callsToAction.map((cta) => (
-        <a class={`btn ${cta.style}`} href={cta.href}>{cta.label}</a>
+        <a class={`btn ${cta.style}`} href={cta.href} rel="noopener">{cta.label}</a>
       ))}
     </div>
     <div class="footnote">
-      Trusted by global communities, AWS user groups, and thousands of engineers tuning into livestreams and conference talks.
+      Trusted by global communities, conference organizers, and thousands of builders tuning into livestreams and conference talks.
     </div>
   </div>
   <div class="panel">
-    <div class="badge">10+ years speaking</div>
-    <div class="badge">Global stage experience</div>
+    <div class="badge">10+ years of public speaking</div>
+    <div class="badge">Global stage experience with C-levels</div>
     <div class="card">
       <div class="title">What I do</div>
       <ul>

@@ -12,6 +12,7 @@ import { writing } from '@data/content';
   <main>
     <div class="content-shell">
       <SectionHeader
+        level={1}
         title="Writing & resources"
         subtitle="Curated essays and guides that help teams adopt cloud-native, serverless-first patterns."
       />
@@ -27,6 +28,8 @@ import { writing } from '@data/content';
 
 <style>
   .articles {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    padding: 1.25rem 0;
   }
+
 </style>

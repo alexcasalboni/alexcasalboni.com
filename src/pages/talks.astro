@@ -12,8 +12,9 @@ import { talks } from '@data/content';
   <main>
     <div class="content-shell">
       <SectionHeader
-        title="Talks & Workshops"
-        subtitle="Conference keynotes, live demos, and workshops recorded with communities around the world."
+        level={1}
+        title="Talks & Keynotes"
+        subtitle="Conference sessions, live demos, and keynotes recorded with communities around the world."
       />
       <div class="stack">
         {talks.map((talk) => (
@@ -29,5 +30,6 @@ import { talks } from '@data/content';
   .stack {
     display: grid;
     gap: 1.1rem;
+    padding: 1.25rem 0;
   }
 </style>

@@ -11,7 +11,8 @@ import Footer from '@components/Footer.astro';
   <main>
     <div class="content-shell">
       <SectionHeader
-        title="Let’s work together"
+        level={1}
+        title="Let's collaborate"
         subtitle="Speaking engagements, content partnerships, advisory sessions, and community collaborations."
       />
       <section class="grid contact">
@@ -22,7 +23,7 @@ import Footer from '@components/Footer.astro';
             build demos, and deliver stories that resonate with developers and decision makers.
           </p>
           <a class="btn" href="mailto:alex@alexcasalboni.com?subject=Collaboration with Alex">
-            Email me
+            Reach out via email
           </a>
         </div>
         <div class="card glass">
@@ -46,6 +47,7 @@ import Footer from '@components/Footer.astro';
     padding: 1.25rem;
     border: 1px solid var(--border);
     border-radius: 16px;
+    margin: 1.25rem 0;
   }
 
   h3 {

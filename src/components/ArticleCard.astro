@@ -4,20 +4,24 @@ interface Props {
   url: string;
   source: string;
   summary: string;
+  year: string;
 }
 
-const { title, url, source, summary } = Astro.props;
+const { title, url, source, summary, year } = Astro.props;
 ---
 
 <article class="card glass">
   <div class="meta">
     <span class="pill">{source}</span>
+    <span class="pill">{year}</span>
   </div>
   <h3>
     <a href={url}>{title}</a>
   </h3>
   <p>{summary}</p>
-  <a class="read" href={url}>Read the article →</a>
+  <a class="read" href={url} target="_blank" rel="noopener">
+    Read the article →
+  </a>
 </article>
 
 <style>
@@ -35,12 +39,18 @@ const { title, url, source, summary } = Astro.props;
   }
 
   .pill {
+    margin: 0 0.35rem 0 0;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
     padding: 0.35rem 0.7rem;
     border-radius: 10px;
     border: 1px solid var(--border);
     background: rgba(255, 255, 255, 0.03);
     color: var(--muted);
     font-size: 0.9rem;
+    height: 2rem;
+    line-height: 2rem;
   }
 
   h3 {

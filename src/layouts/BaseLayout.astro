@@ -1,19 +1,53 @@
 ---
 import '@styles/global.css';
 
+const siteUrl = 'https://www.alexcasalboni.com';
 const {
   title = 'Alex Casalboni | Developer Advocate',
   description = 'Developer Advocate focused on serverless, community, and developer experience.',
+  image = `${siteUrl}/favicon.svg`,
+  canonical,
+  lang = 'en',
 } = Astro.props;
+
+const canonicalUrl = canonical ?? `${siteUrl}${Astro.url?.pathname ?? ''}`;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Alex Casalboni',
+  url: siteUrl,
+  sameAs: [
+    'https://www.linkedin.com/in/alexcasalboni/',
+    'https://twitter.com/alex_casalboni',
+    'https://bsky.app/profile/alexcasalboni.bsky.social',
+    'https://github.com/alexcasalboni',
+    'https://dev.to/alexcasalboni',
+  ],
+  jobTitle: 'Developer Advocate',
+  description,
+};
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
