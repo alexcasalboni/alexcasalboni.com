@@ -2,7 +2,6 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import NavBar from '@components/NavBar.astro';
 import SectionHeader from '@components/SectionHeader.astro';
-import SocialLinks from '@components/SocialLinks.astro';
 import Footer from '@components/Footer.astro';
 ---
 
@@ -26,10 +25,19 @@ import Footer from '@components/Footer.astro';
             Reach out via email
           </a>
         </div>
-        <div class="card glass">
-          <h3>Stay connected</h3>
-          <p>Follow along for new talks, blog posts, and community events.</p>
-          <SocialLinks />
+        <div class="card plain">
+          <h3>Collaboration types</h3>
+          <ul>
+            <li>Inspiring keynotes</li>
+            <li>Technical talks</li>
+            <li>Conference MC</li>
+            <li>Hands-on workshops</li>
+            <li>Community strategy</li>
+            <li>Advisory</li>
+            <li>Product storytelling</li>
+            <li>Content partnerships</li>
+            <li>Mentoring</li>
+          </ul>
         </div>
       </section>
     </div>
@@ -69,5 +77,37 @@ import Footer from '@components/Footer.astro';
     color: #0b0f17;
     font-weight: 700;
     box-shadow: var(--glow);
+  }
+
+  .card.plain {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .card.plain ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    list-style: none;
+  }
+
+  .card.plain li {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+  }
+
+  .card.plain li:hover {
+    background: rgba(122, 215, 240, 0.1);
+    border-color: rgba(122, 215, 240, 0.3);
+    color: var(--accent);
   }
 </style>

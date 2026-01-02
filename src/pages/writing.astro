@@ -32,4 +32,29 @@ import { writing } from '@data/content';
     padding: 1.25rem 0;
   }
 
+  /* Remove glow from all cards by default */
+  :global(.articles .card) {
+    box-shadow: none;
+  }
+
+  /* Mobile: 1 card per row - glow on first 3 */
+  @media (max-width: 767px) {
+    :global(.articles .card:nth-child(-n+3)) {
+      box-shadow: var(--glow);
+    }
+  }
+
+  /* Tablet: 2 cards per row - glow on first 4 */
+  @media (min-width: 768px) and (max-width: 1099px) {
+    :global(.articles .card:nth-child(-n+4)) {
+      box-shadow: var(--glow);
+    }
+  }
+
+  /* Desktop: 3 cards per row - glow on first 3 */
+  @media (min-width: 1100px) {
+    :global(.articles .card:nth-child(-n+3)) {
+      box-shadow: var(--glow);
+    }
+  }
 </style>

@@ -75,6 +75,17 @@ import { writing, talks, SUBSTACK_URL } from '@data/content';
     grid-template-columns: 1fr;
   }
 
+  /* Remove glow from cards by default on homepage */
+  :global(.content-shell .glass) {
+    box-shadow: none;
+  }
+
+  /* Keep glow on hero and bottom CTA */
+  :global(.hero.glass),
+  :global(.cta.glass) {
+    box-shadow: var(--glow);
+  }
+
   .see-more {
     margin: 1.5rem 0 3rem;
   }

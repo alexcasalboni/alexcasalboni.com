@@ -57,6 +57,13 @@ export const writing = [
     summary: 'Learn how WebAssembly is transforming cloud, edge, and browser computing (with code examples).',
   },
   {
+    title: "Implementing scalable metered billing with Stripe: How Edgee handles billions of events",
+    url: 'https://stripe.dev/blog/implementing-scalable-metered-billing-with-stripe-how-edgee-handles-billions-of-events',
+    source: 'Stripe Dot Dev',
+    year: '2025',
+    summary: 'Discover how Edgee built a usage-based billing system processing billions of requests across 100+ edge locations.',
+  },
+  {
     title: "Announcing the Edgee Component Registry for WebAssembly at the edge",
     url: 'https://www.edgee.cloud/blog/posts/announcing-component-registry',
     source: 'Edgee Blog',
@@ -68,14 +75,14 @@ export const writing = [
     url: 'https://www.fastly.com/blog/replacing-client-side-javascript-sdks-webassembly-components-edge',
     source: 'Fastly Blog',
     year: '2025',
-    summary: 'Edgee and Fastly team up to replace client-side JavaScript SDKs with WebAssembly at the edge, improving performance, security, and data collection.',
+    summary: 'Edgee and Fastly team up to replace client-side JavaScript SDKs with WebAssembly at the edge.',
   },
   {
     title: 'Announcing AWS Lambda Function URLs',
     url: 'https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/',
     source: 'AWS News Blog',
     year: '2022',
-    summary: 'Announcing AWS Lambda Function URLs, a new way to create HTTPS endpoints for your Lambda functions without needing to set up API Gateway.',
+    summary: 'Announcing AWS Lambda Function URLs, a new way to create HTTPS endpoints for your Lambda functions.',
   },
   {
     title: 'Deep dive: finding the optimal resources allocation for your Lambda functions',
@@ -85,13 +92,26 @@ export const writing = [
     summary: 'Practical benchmarks and guidance to tune AWS Lambda memory and cost for production workloads.',
   },
   {
+    title: 'How to live-stream meetups on Twitch without any special equipment',
+    url: 'https://dev.to/aws/how-to-live-stream-meetups-on-twitch-without-any-special-equipment-56cb',
+    source: 'DEV Community',
+    year: '2020',
+    summary: 'A step-by-step guide to live-streaming events from home during the early COVID-19 lockdowns.',
+  },
+  {
     title: 'Design patterns for high-volume, time-series data in Amazon DynamoDB',
     url: 'https://aws.amazon.com/blogs/database/design-patterns-for-high-volume-time-series-data-in-amazon-dynamodb/',
     source: 'AWS Database Blog',
     year: '2019',
     summary: 'How to design for time-series data in DynamoDB using adaptive capacity, GSIs, and TTLs.',
   },
-  
+  {
+    title: 'Machine Learning, Recommendation Systems, and Data Analysis at Cloud Academy',
+    url: 'https://aws.amazon.com/blogs/aws/machine-learning-recommendation-systems-and-data-analysis-at-cloud-academy/',
+    source: 'AWS News Blog',
+    year: '2016',
+    summary: 'How Cloud Academy mixes technology and content, using recommendation systems running on AWS.',
+  },
 ];
 
 export const talks = [

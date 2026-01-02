@@ -1,11 +1,13 @@
 ---
 import { SUBSTACK_URL } from '@data/content';
+
+const currentPath = Astro.url?.pathname ?? '/';
 ---
 
 <header class="nav-shell">
   <div class="brand">
     <div class="avatar">
-      <img src="/avatar.svg" alt="Alex Casalboni placeholder portrait" loading="lazy" />
+      <img src="/alex-casalboni-headshot.jpg" alt="Alex Casalboni" />
     </div>
     <div>
       <strong>Alex Casalboni</strong>
@@ -14,10 +16,10 @@ import { SUBSTACK_URL } from '@data/content';
   </div>
 
   <nav class="links">
-    <a class="nav-link" href="/">Home</a>
-    <a class="nav-link" href="/writing">Writing</a>
-    <a class="nav-link" href="/talks">Talks</a>
-    <a class="nav-link" href="/contact">Contact</a>
+    <a class={`nav-link ${currentPath === '/' ? 'active' : ''}`} href="/">Home</a>
+    <a class={`nav-link ${currentPath.startsWith('/writing') ? 'active' : ''}`} href="/writing">Writing</a>
+    <a class={`nav-link ${currentPath.startsWith('/talks') ? 'active' : ''}`} href="/talks">Talks</a>
+    <a class={`nav-link ${currentPath.startsWith('/contact') ? 'active' : ''}`} href="/contact">Contact</a>
     <a class="cta" href={SUBSTACK_URL} rel="noopener">Substack</a>
   </nav>
 </header>
@@ -78,7 +80,8 @@ import { SUBSTACK_URL } from '@data/content';
     border: 1px solid transparent;
   }
 
-  .nav-link:hover {
+  .nav-link:hover,
+  .nav-link.active {
     color: var(--text);
     border-color: var(--border);
     background: rgba(255, 255, 255, 0.02);

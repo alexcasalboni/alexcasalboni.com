@@ -16,9 +16,16 @@ import { talks } from '@data/content';
         title="Talks & Keynotes"
         subtitle="Conference sessions, live demos, and keynotes recorded with communities around the world."
       />
-      <div class="stack">
-        {talks.map((talk) => (
-          <TalkCard {...talk} />
+      <div class="talks-list">
+        {talks.map((talk, index) => (
+          <TalkCard
+            title={talk.title}
+            event={talk.event}
+            videoId={talk.videoId}
+            theme={talk.theme}
+            year={talk.year}
+            class={index % 2 === 0 ? 'left' : 'right'}
+          />
         ))}
       </div>
     </div>
@@ -27,9 +34,13 @@ import { talks } from '@data/content';
 </BaseLayout>
 
 <style>
-  .stack {
+  .talks-list {
     display: grid;
     gap: 1.1rem;
     padding: 1.25rem 0;
+  }
+
+  :global(.talks-list .talk) {
+    box-shadow: none;
   }
 </style>
