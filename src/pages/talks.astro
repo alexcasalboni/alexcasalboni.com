@@ -1,0 +1,46 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NavBar from '@components/NavBar.astro';
+import SectionHeader from '@components/SectionHeader.astro';
+import TalkCard from '@components/TalkCard.astro';
+import Footer from '@components/Footer.astro';
+import { talks } from '@data/content';
+---
+
+<BaseLayout title="Talks | Alex Casalboni">
+  <NavBar />
+  <main>
+    <div class="content-shell">
+      <SectionHeader
+        level={1}
+        subtitle="Conference sessions, live demos, and keynotes recorded with communities around the world."
+        title="Talks & Keynotes"
+      />
+      <div class="talks-list">
+        {talks.map((talk, index) => (
+          <TalkCard
+            class:list={{"left": index % 2 === 0, "right": index % 2 !== 0}}
+            event={talk.event}
+            theme={talk.theme}
+            title={talk.title}
+            videoId={talk.videoId}
+            year={talk.year}
+          />
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .talks-list {
+    display: grid;
+    gap: 1.1rem;
+    padding: 1.25rem 0;
+  }
+
+  :global(.talks-list .talk) {
+    box-shadow: none;
+  }
+</style>

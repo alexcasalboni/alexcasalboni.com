@@ -1,0 +1,60 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NavBar from '@components/NavBar.astro';
+import SectionHeader from '@components/SectionHeader.astro';
+import ArticleCard from '@components/ArticleCard.astro';
+import Footer from '@components/Footer.astro';
+import { writing } from '@data/content';
+---
+
+<BaseLayout title="Writing | Alex Casalboni">
+  <NavBar />
+  <main>
+    <div class="content-shell">
+      <SectionHeader
+        level={1}
+        subtitle="Curated essays and guides that help teams adopt cloud-native, serverless-first patterns."
+        title="Writing & resources"
+      />
+      <div class="grid articles">
+        {writing.map((article) => (
+          <ArticleCard {...article} />
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .articles {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    padding: 1.25rem 0;
+  }
+
+  /* Remove glow from all cards by default */
+  :global(.articles .card) {
+    box-shadow: none;
+  }
+
+  /* Mobile: 1 card per row - glow on first 3 */
+  @media (max-width: 767px) {
+    :global(.articles .card:nth-child(-n+3)) {
+      box-shadow: var(--glow);
+    }
+  }
+
+  /* Tablet: 2 cards per row - glow on first 4 */
+  @media (min-width: 768px) and (max-width: 1099px) {
+    :global(.articles .card:nth-child(-n+4)) {
+      box-shadow: var(--glow);
+    }
+  }
+
+  /* Desktop: 3 cards per row - glow on first 3 */
+  @media (min-width: 1100px) {
+    :global(.articles .card:nth-child(-n+3)) {
+      box-shadow: var(--glow);
+    }
+  }
+</style>

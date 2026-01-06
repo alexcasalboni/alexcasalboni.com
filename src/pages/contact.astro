@@ -1,0 +1,113 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NavBar from '@components/NavBar.astro';
+import SectionHeader from '@components/SectionHeader.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<BaseLayout title="Contact | Alex Casalboni">
+  <NavBar />
+  <main>
+    <div class="content-shell">
+      <SectionHeader
+        level={1}
+        subtitle="Speaking engagements, content partnerships, advisory sessions, and community collaborations."
+        title="Let's collaborate"
+      />
+      <section class="grid contact">
+        <div class="card glass">
+          <h3>Book Alex</h3>
+          <p>
+            Planning a conference keynote, customer story, or product launch? I help craft messages,
+            build demos, and deliver stories that resonate with developers and decision makers.
+          </p>
+          <a class="btn" href="mailto:alex@alexcasalboni.com?subject=Collaboration with Alex">
+            Reach out via email
+          </a>
+        </div>
+        <div class="card plain">
+          <h3>Collaboration types</h3>
+          <ul>
+            <li>Inspiring keynotes</li>
+            <li>Technical talks</li>
+            <li>Conference MC</li>
+            <li>Hands-on workshops</li>
+            <li>Community strategy</li>
+            <li>Advisory</li>
+            <li>Product storytelling</li>
+            <li>Content partnerships</li>
+            <li>Mentoring</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .contact {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin: 1.25rem 0;
+  }
+
+  h3 {
+    margin: 0 0 0.3rem;
+  }
+
+  p {
+    margin: 0 0 0.9rem;
+    color: var(--muted);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.65rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, #7ad7f0, #c792ea);
+    color: #0b0f17;
+    font-weight: 700;
+    box-shadow: var(--glow);
+  }
+
+  .card.plain {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .card.plain ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    list-style: none;
+  }
+
+  .card.plain li {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+  }
+
+  .card.plain li:hover {
+    background: rgba(122, 215, 240, 0.1);
+    border-color: rgba(122, 215, 240, 0.3);
+    color: var(--accent);
+  }
+</style>

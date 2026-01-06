@@ -1,0 +1,45 @@
+---
+import { highlights } from '@data/content';
+---
+
+<section class="grid highlights">
+  {highlights.map((item) => (
+    <article class="tile glass">
+      <div class="accent">{item.accent}</div>
+      <h3>{item.title}</h3>
+      <p>{item.copy}</p>
+    </article>
+  ))}
+</section>
+
+<style>
+  .highlights {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .tile {
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+
+  h3 {
+    margin: 0.2rem 0 0.4rem;
+  }
+
+  p {
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .accent {
+    display: inline-flex;
+    padding: 0.35rem 0.75rem;
+    border-radius: 10px;
+    background: rgba(122, 215, 240, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(122, 215, 240, 0.3);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>

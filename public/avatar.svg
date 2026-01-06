@@ -1,0 +1,14 @@
+<svg width="260" height="260" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait placeholder</title>
+  <desc id="desc">Simple gradient silhouette placeholder</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7ad7f0"/>
+      <stop offset="100%" stop-color="#c792ea"/>
+    </linearGradient>
+  </defs>
+  <rect width="260" height="260" rx="40" fill="#0f121c"/>
+  <circle cx="130" cy="100" r="52" fill="url(#bg)" opacity="0.8"/>
+  <path d="M70 210c8-40 44-60 60-60s52 20 60 60" fill="url(#bg)" opacity="0.5"/>
+  <rect x="70" y="180" width="120" height="40" rx="20" fill="#0f121c" opacity="0.6"/>
+</svg>

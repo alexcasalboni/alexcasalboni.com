@@ -1,0 +1,69 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  source: string;
+  summary: string;
+  year: string;
+}
+
+const { title, url, source, summary, year } = Astro.props;
+---
+
+<article class="card glass">
+  <div class="meta">
+    <span class="pill">{source}</span>
+    <span class="pill">{year}</span>
+  </div>
+  <h3>
+    <a href={url}>{title}</a>
+  </h3>
+  <p>{summary}</p>
+  <a class="read" href={url} rel="noopener" target="_blank">
+    Read the article →
+  </a>
+</article>
+
+<style>
+  .card {
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .meta {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .pill {
+    margin: 0 0.35rem 0 0;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0.35rem 0.7rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--muted);
+    font-size: 0.9rem;
+    height: 2rem;
+    line-height: 2rem;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .read {
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,145 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NavBar from '@components/NavBar.astro';
+import Hero from '@components/Hero.astro';
+import Highlights from '@components/Highlights.astro';
+import SectionHeader from '@components/SectionHeader.astro';
+import ArticleCard from '@components/ArticleCard.astro';
+import TalkCard from '@components/TalkCard.astro';
+import SocialLinks from '@components/SocialLinks.astro';
+import Footer from '@components/Footer.astro';
+import { writing, talks, SUBSTACK_URL } from '@data/content';
+---
+
+<BaseLayout>
+  <NavBar />
+  <main>
+    <div class="content-shell">
+      <Hero />
+
+      <SectionHeader
+        subtitle="Deep technical background, hands-on developer experience, and practical education."
+        title="What you can expect"
+      />
+      <Highlights />
+
+      <SectionHeader
+        subtitle="Curated essays, guides, and playbooks that resonated with the community."
+        title="Latest writing"
+      />
+      <div class="grid writing">
+        {writing.slice(0, 3).map((article) => (
+          <ArticleCard {...article} />
+        ))}
+      </div>
+      <div class="see-more">
+        <a href="/writing">Browse all articles →</a>
+      </div>
+
+      <SectionHeader
+        subtitle="From conference keynotes to livestreams, here are a few favorites."
+        title="Talks & live sessions"
+      />
+      <div class="grid talks">
+        {talks.slice(0, 2).map((talk) => (
+          <TalkCard {...talk} />
+        ))}
+      </div>
+      <div class="see-more">
+        <a href="/talks">Watch more talks →</a>
+      </div>
+
+      <section class="cta glass">
+        <div>
+          <p class="eyebrow">Stay in the loop</p>
+          <h3>Get new essays about startups in your inbox every other week.</h3>
+          <p class="muted">
+            Join the community on Substack,
+            with a mix of free and premium content for engineers and product teams.
+          </p>
+        </div>
+        <a class="btn" href={SUBSTACK_URL} rel="noopener">Join the list</a>
+      </section>
+
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .writing {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .talks {
+    grid-template-columns: 1fr;
+  }
+
+  /* Remove glow from cards by default on homepage */
+  :global(.content-shell .glass) {
+    box-shadow: none;
+  }
+
+  /* Keep glow on hero and bottom CTA */
+  :global(.hero.glass),
+  :global(.cta.glass) {
+    box-shadow: var(--glow);
+  }
+
+  .see-more {
+    margin: 1.5rem 0 3rem;
+  }
+
+  .cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+
+  .cta .eyebrow {
+    margin: 0;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+  }
+
+  .cta h3 {
+    margin: 0;
+  }
+
+  .muted {
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.65rem 1.1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, #7ad7f0, #c792ea);
+    color: #0b0f17;
+    font-weight: 700;
+    width: fit-content;
+    box-shadow: var(--glow);
+  }
+
+  @media (min-width: 900px) {
+    .talks {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .cta {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+</style>
