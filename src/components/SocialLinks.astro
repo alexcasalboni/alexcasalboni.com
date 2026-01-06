@@ -19,8 +19,8 @@ const icons: Record<string, string> = {
 
 <div class="social">
   {socialLinks.map((link) => (
-    <a class="pill" href={link.href} aria-label={link.label} rel="me noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+    <a aria-label={link.label} class="pill" href={link.href} rel="me noopener">
+      <svg aria-hidden="true" viewBox="0 0 24 24">
         <g set:html={icons[link.icon]} />
       </svg>
       <span>{link.label}</span>

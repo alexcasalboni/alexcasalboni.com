@@ -13,18 +13,18 @@ import { talks } from '@data/content';
     <div class="content-shell">
       <SectionHeader
         level={1}
-        title="Talks & Keynotes"
         subtitle="Conference sessions, live demos, and keynotes recorded with communities around the world."
+        title="Talks & Keynotes"
       />
       <div class="talks-list">
         {talks.map((talk, index) => (
           <TalkCard
-            title={talk.title}
+            class:list={{"left": index % 2 === 0, "right": index % 2 !== 0}}
             event={talk.event}
-            videoId={talk.videoId}
             theme={talk.theme}
+            title={talk.title}
+            videoId={talk.videoId}
             year={talk.year}
-            class={index % 2 === 0 ? 'left' : 'right'}
           />
         ))}
       </div>

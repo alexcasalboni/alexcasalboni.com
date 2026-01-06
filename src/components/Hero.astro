@@ -12,7 +12,7 @@ import { callsToAction } from '@data/content';
     </p>
     <div class="actions">
       {callsToAction.map((cta) => (
-        <a class={`btn ${cta.style}`} href={cta.href} rel="noopener">{cta.label}</a>
+        <a class:list={[`btn`,`${cta.style}`]} href={cta.href} rel="noopener">{cta.label}</a>
       ))}
     </div>
     <div class="footnote">
@@ -21,7 +21,7 @@ import { callsToAction } from '@data/content';
   </div>
   <div class="panel">
     <div class="headshot">
-      <img src="/alex-casalboni-headshot.jpg" alt="Alex Casalboni" />
+      <img alt="Alex Casalboni" src="/alex-casalboni-headshot.jpg" />
     </div>
   </div>
 </section>

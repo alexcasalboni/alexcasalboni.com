@@ -11,7 +11,7 @@ interface Props {
 const { title, event, videoId, theme, year, class: className } = Astro.props;
 ---
 
-<article class={`talk glass ${className || ''}`}>
+<article class:list={[`talk glass`,`${className || ''}`]}>
   <div class="info">
     <span class="tag">{event}</span>
     <span class="tag">{year}</span>
@@ -20,11 +20,11 @@ const { title, event, videoId, theme, year, class: className } = Astro.props;
   </div>
   <div class="video">
     <iframe
-      src={`https://www.youtube-nocookie.com/embed/${videoId}`}
-      title={title}
-      loading="lazy"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
+      loading="lazy"
+      src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+      title={title}
     />
   </div>
 </article>
