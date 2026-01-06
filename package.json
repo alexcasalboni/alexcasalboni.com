@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "lint": "eslint . --ext .js,.ts,.astro"
   },
   "dependencies": {
     "astro": "^5.16.6"
