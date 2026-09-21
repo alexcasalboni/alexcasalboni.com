@@ -1,6 +1,10 @@
 # alexcasalboni.com
 
-Modern personal website for Alex Casalboni, built with [Astro](https://astro.build/) and optimized for static deployment.
+Personal website for Alex Casalboni. Built with [Astro](https://astro.build/), built statically, no server at runtime.
+
+## Requirements
+
+Node.js `>= 22.12.0` (required by Astro 7). CI runs Node 24.
 
 ## Getting started
 
@@ -23,15 +27,23 @@ The static output is written to `dist/`. Preview the production build locally wi
 npm run preview
 ```
 
-## Additional checks
+## Checks
 
 ```bash
 npm run check   # Type and Astro template checks
+npm run lint    # ESLint over .js, .ts, and .astro files
 ```
+
+CI (`.github/workflows/ci.yml`) runs `check` and `build` on every pull request and on pushes to `master`. It does not run `lint`.
 
 ## Project structure
 
-- `src/pages` — Astro pages for the homepage, writing, talks, and contact.
-- `src/components` — Reusable UI components.
-- `src/data` — Centralized content for social links, writing, and talks.
-- `public` — Static assets such as the placeholder avatar and favicon.
+- `src/pages` — one file per route: homepage, writing, talks, contact.
+- `src/components` — reusable UI components.
+- `src/layouts/BaseLayout.astro` — HTML shell, meta tags, Open Graph, and JSON-LD structured data.
+- `src/data/content.ts` — all site copy that isn't in a template: social links, highlights, writing, talks, and calls to action.
+- `public` — static assets: headshot, favicon, `robots.txt`, and a hand-maintained `sitemap.xml`.
+
+## Editing content
+
+Most content changes are edits to `src/data/content.ts` rather than to templates. Adding a page means adding a file to `src/pages` **and** a `<url>` entry to `public/sitemap.xml`, which is not generated.
