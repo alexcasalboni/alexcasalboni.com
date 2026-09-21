@@ -11,17 +11,17 @@ export const socialLinks = [
 export const highlights = [
   {
     title: 'Developer Advocacy',
-    copy: '10+ years of supporting technical communities, building engaging demos, and crafting product messaging for builders worldwide.',
+    copy: 'Ten years working with developer communities: demos, workshops, documentation, and product messaging.',
     accent: 'Community',
   },
   {
     title: 'Public Speaking',
-    copy: 'Keynotes, technical deep dives, and meetups across Europe and the US with a focus on cloud architectures and developer experience.',
+    copy: 'Keynotes, deep dives, and meetups across EMEA and the US, focused on cloud architecture and DevEx.',
     accent: 'Talks',
   },
   {
     title: 'Content & Storytelling',
-    copy: 'Blogs, newsletters, live-streams, and podcasts that make products and complex topics approachable for newcomers and experts.',
+    copy: 'Blog posts, live streams, and podcasts that make complex systems easier to reason about.',
     accent: 'Content',
   },
 ];

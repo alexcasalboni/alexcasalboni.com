@@ -1,10 +1,10 @@
 ---
 import '@styles/global.css';
 
-const siteUrl = 'https://www.alexcasalboni.com';
+const siteUrl = Astro.site?.origin ?? 'https://alexcasalboni.com';
 const {
   title = 'Alex Casalboni | Developer Advocate',
-  description = 'Developer Advocate focused on serverless, community, and developer experience.',
+  description = 'Developer Advocate and software engineer. I help developers make sense of complex systems through conference talks, live demos, and technical writing.',
   image = `${siteUrl}/favicon.svg`,
   canonical,
   lang = 'en',
