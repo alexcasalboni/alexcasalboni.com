@@ -6,9 +6,8 @@ import Highlights from '@components/Highlights.astro';
 import SectionHeader from '@components/SectionHeader.astro';
 import ArticleCard from '@components/ArticleCard.astro';
 import TalkCard from '@components/TalkCard.astro';
-import SocialLinks from '@components/SocialLinks.astro';
 import Footer from '@components/Footer.astro';
-import { writing, talks, SUBSTACK_URL } from '@data/content';
+import { writing, talks } from '@data/content';
 ---
 
 <BaseLayout>
@@ -48,19 +47,6 @@ import { writing, talks, SUBSTACK_URL } from '@data/content';
       <div class="see-more">
         <a href="/talks">Watch more talks →</a>
       </div>
-
-      <section class="cta glass">
-        <div>
-          <p class="eyebrow">Stay in the loop</p>
-          <h3>Get new essays about startups in your inbox every other week.</h3>
-          <p class="muted">
-            Join the community on Substack,
-            with a mix of free and premium content for engineers and product teams.
-          </p>
-        </div>
-        <a class="btn" href={SUBSTACK_URL} rel="noopener">Join the list</a>
-      </section>
-
     </div>
   </main>
   <Footer />
@@ -80,9 +66,8 @@ import { writing, talks, SUBSTACK_URL } from '@data/content';
     box-shadow: none;
   }
 
-  /* Keep glow on hero and bottom CTA */
-  :global(.hero.glass),
-  :global(.cta.glass) {
+  /* Keep glow on hero */
+  :global(.hero.glass) {
     box-shadow: var(--glow);
   }
 
@@ -90,56 +75,10 @@ import { writing, talks, SUBSTACK_URL } from '@data/content';
     margin: 1.5rem 0 3rem;
   }
 
-  .cta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    padding: 1.5rem;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-  }
-
-  .cta .eyebrow {
-    margin: 0;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.85rem;
-  }
-
-  .cta h3 {
-    margin: 0;
-  }
-
-  .muted {
-    color: var(--muted);
-    margin: 0;
-  }
-
-  .btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.65rem 1.1rem;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: linear-gradient(135deg, #7ad7f0, #c792ea);
-    color: #0b0f17;
-    font-weight: 700;
-    width: fit-content;
-    box-shadow: var(--glow);
-  }
-
   @media (min-width: 900px) {
     .talks {
       grid-template-columns: 1fr;
       gap: 1.5rem;
-    }
-
-    .cta {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
     }
   }
 </style>

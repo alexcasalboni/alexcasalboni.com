@@ -1,16 +1,16 @@
 ---
-import { SUBSTACK_URL } from '@data/content';
+import { LINKEDIN_URL } from '@data/content';
 
 const currentPath = Astro.url?.pathname ?? '/';
 ---
 
 <header class="nav-shell">
   <div class="brand">
-    <div class="avatar">
-      <img alt="Alex Casalboni" src="/alex-casalboni-headshot.jpg" />
-    </div>
+    <a aria-hidden="true" class="avatar" href="/" tabindex="-1">
+      <img alt="" src="/alex-casalboni-headshot.jpg" />
+    </a>
     <div>
-      <strong>Alex Casalboni</strong>
+      <a class="brand-name" href="/"><strong>Alex Casalboni</strong></a>
       <div class="subtitle">Passionate about sharing & helping others succeed</div>
     </div>
   </div>
@@ -20,7 +20,7 @@ const currentPath = Astro.url?.pathname ?? '/';
     <a class:list={[`nav-link`,{"active": currentPath.startsWith('/writing')}]} href="/writing">Writing</a>
     <a class:list={[`nav-link`,{"active": currentPath.startsWith('/talks')}]} href="/talks">Talks</a>
     <a class:list={[`nav-link`,{"active": currentPath.startsWith('/contact')}]} href="/contact">Contact</a>
-    <a class="cta" href={SUBSTACK_URL} rel="noopener">Substack</a>
+    <a class="cta" href={LINKEDIN_URL} rel="noopener">Connect on LinkedIn</a>
   </nav>
 </header>
 
@@ -46,11 +46,21 @@ const currentPath = Astro.url?.pathname ?? '/';
   }
 
   .avatar {
+    display: block;
     width: 44px;
     height: 44px;
     border-radius: 12px;
     padding: 2px;
     background: linear-gradient(135deg, rgba(122, 215, 240, 0.4), rgba(199, 146, 234, 0.4));
+  }
+
+  .brand-name {
+    color: var(--text);
+  }
+
+  .avatar:hover,
+  .brand-name:hover {
+    opacity: 0.85;
   }
 
   .avatar img {
