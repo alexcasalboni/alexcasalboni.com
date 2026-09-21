@@ -1,12 +1,11 @@
-export const SUBSTACK_URL = 'https://startupengineeringnotes.substack.com';
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/alexcasalboni/';
 
 export const socialLinks = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/alexcasalboni/', icon: 'linkedin' },
+  { label: 'LinkedIn', href: LINKEDIN_URL, icon: 'linkedin' },
   { label: 'X / Twitter', href: 'https://twitter.com/alex_casalboni', icon: 'twitter' },
   { label: 'Bluesky', href: 'https://bsky.app/profile/alexcasalboni.bsky.social', icon: 'bluesky' },
   { label: 'GitHub', href: 'https://github.com/alexcasalboni', icon: 'github' },
   { label: 'DEV', href: 'https://dev.to/alexcasalboni', icon: 'dev' },
-  { label: 'Substack', href: SUBSTACK_URL, icon: 'substack' },
 ];
 
 export const highlights = [
@@ -29,11 +28,46 @@ export const highlights = [
 
 export const writing = [
   {
+    title: 'How to host Unleash on AWS: six ways to run self-hosted feature flags',
+    url: 'https://www.getunleash.io/blog/self-host-unleash-aws',
+    source: 'Unleash Blog',
+    year: '2026',
+    summary: '6 ways to self-host Unleash on AWS, from Lightsail to EKS at scale. Open source, your infrastructure, your data.',
+  },
+  {
+    title: 'The AI Kill Switch you actually need',
+    url: 'https://www.getunleash.io/blog/ai-kill-switch',
+    source: 'Unleash Blog',
+    year: '2026',
+    summary: 'An OpenAI model went rogue. A federal AI kill switch bill followed. Here\'s the runtime control you can actually build.',
+  },
+  {
+    title: 'Automating feature flag cleanup with Unleash, GitHub, and Copilot',
+    url: 'https://www.getunleash.io/blog/automating-feature-flag-cleanup-github-copilot',
+    source: 'Unleash Blog',
+    year: '2026',
+    summary: 'Automate feature flag cleanup with Unleash and GitHub Copilot, using webhooks and an MCP server.',
+  },
+  {
+    title: 'From AI Code to Production: The Case for FeatureOps',
+    url: 'https://devops.com/from-ai-code-to-production-the-case-for-featureops/',
+    source: 'DevOps.com',
+    year: '2026',
+    summary: 'Learn about FeatureOps and the runtime controls you need to close the understanding gap and prevent outages.',
+  },
+  {
+    title: 'AI Governance starts at runtime',
+    url: 'https://www.getunleash.io/blog/ai-governance-starts-at-runtime',
+    source: 'Unleash Blog',
+    year: '2026',
+    summary: 'A new report finds 60% of organizations will deploy agentic AI in 2026, but only 27% feel confident securing it. Runtime controls close the gap.',
+  },
+  {
     title: 'Graceful degradation in practice: how FeatureOps builds real resilience',
     url: 'https://www.getunleash.io/blog/graceful-degradation-featureops-resilience',
     source: 'Unleash Blog',
     year: '2025',
-    summary: 'FeatureOps makes graceful degradation practical. Learn how feature flags keep systems resilient without slowing development.',
+    summary: 'FeatureOps makes graceful degradation practical. Learn how feature flags keep systems resilient without slowing devs.',
   },
   {
     title: 'Accelerate Development with the Unleash MCP server',
@@ -116,6 +150,20 @@ export const writing = [
 
 export const talks = [
   {
+    title: 'Feature Flags vs Canary Deployments',
+    event: 'DevOps Paradox Podcast',
+    year: '2026',
+    videoId: 'sL4-NJywAgA',
+    theme: 'DevOps & Feature Flags',
+  },
+  {
+    title: 'FeatureOps: Designing for Failure and Speed in Agentic AI Workflows',
+    event: 'Python Italy',
+    year: '2026',
+    videoId: 'y04Qf1vLlLo',
+    theme: 'FeatureOps & AI',
+  },
+  {
     title: 'From Cloud to Edge computing - Unleashing the power of WebAssembly at the edge',
     event: 'Wasm.io',
     year: '2025',
@@ -182,8 +230,8 @@ export const talks = [
 
 export const callsToAction = [
   {
-    label: 'Subscribe on Substack',
-    href: SUBSTACK_URL,
+    label: 'Connect on LinkedIn',
+    href: LINKEDIN_URL,
     style: 'solid',
   },
   {
